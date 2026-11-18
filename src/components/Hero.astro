@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import avatar from "../assets/profile/avatar.jpg";
 import { site } from "../data/site";
+import { url } from "../utils/url";
 ---
 
 <section class="hero container" id="inicio">
@@ -20,7 +21,7 @@ import { site } from "../data/site";
     <p class="tagline">{site.tagline}</p>
 
     <div class="actions">
-      <a class="btn btn--primary" href="/proyectos">Ver proyectos</a>
+      <a class="btn btn--primary" href={url("proyectos")}>Ver proyectos</a>
     </div>
 
     <ul class="socials">

@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import webImg from "../../assets/projects/BlockForSaleWeb/BlockForSaleWeb-Profile.png";
+import { url } from "../../utils/url";
 ---
 
 <header class="hero">
   <div class="container inner">
     <div class="text">
-      <a class="back" href="/proyectos">← Todos los proyectos</a>
+      <a class="back" href={url("proyectos")}>← Todos los proyectos</a>
       <h1>Block For Sale Web</h1>
       <p class="lead">
         Página web para promocionar los eventos de la comunidad de Block For

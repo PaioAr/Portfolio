@@ -1,0 +1,29 @@
+@import "tailwindcss";
+:root {
+  --bg: #0b0d12;
+  --surface: #141821;
+  --text: #e8eaf0;
+  --muted: #9aa3b2;
+  --accent: #6ee7b7;
+  --border: #232a38;
+  --radius: 14px;
+  --max-width: 1080px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}

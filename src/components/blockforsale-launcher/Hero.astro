@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import launcherImg from "../../assets/projects/BlockForSaleLauncher/blockforsalelauncher-profile.png";
+import { url } from "../../utils/url"
 ---
 
 <header class="hero">
   <div class="container inner">
     <div class="text">
-      <a class="back" href="/proyectos">← Todos los proyectos</a>
+      <a class="back" href={url("proyectos")}>← Todos los proyectos</a>
       <h1>Block For Sale Launcher</h1>
       <p class="lead">
         Launcher personalizado de Minecraft Java Edition con instancias

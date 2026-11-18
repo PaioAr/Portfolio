@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { Project } from "../../data/projects";
-
+import { url } from "../../utils/url";
 interface Props {
   project: Project;
 }
@@ -9,7 +9,7 @@ const { project } = Astro.props;
 const { slug, title, description, tags, image } = project;
 ---
 
-<a class="card" href={`/proyectos/${slug}`}>
+<a class="card" href={url(`proyectos/${slug}`)}>
   <div class="thumb">
     {image ? (
       <Image src={image} alt={`Captura de ${title}`} width={640} height={400} format="webp" />

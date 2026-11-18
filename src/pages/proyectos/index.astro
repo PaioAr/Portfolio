@@ -3,11 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ui/ProjectCard.astro";
 import { projects } from "../../data/projects";
 import { Image } from "astro:assets";
+import { url } from "../../utils/url";
+
 ---
 
 <BaseLayout title="Proyectos | Brandon Coronel">
   <main class="container page">
-    <a class="back" href="/">← Volver</a>
+    <a class="back" href={url()}>← Volver</a>
     <h1>Proyectos</h1>
     <p class="sub">Haz clic en un proyecto para ver más detalles.</p>
 

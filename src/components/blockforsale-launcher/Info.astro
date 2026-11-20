@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import shot from "../../assets/projects/BlockForSaleLauncher/blockforsalelauncher-in.png";
+
+const items = [
+  {
+    title: "Instancias personalizadas",
+    text: "Cada evento tiene su propia instancia con mods y configuración lista, sin que el jugador tenga que instalar nada a mano.",
+  },
+  {
+    title: "Login con Microsoft u offline",
+    text: "Soporta cuentas premium y no premium, para que cualquiera de la comunidad pueda unirse.",
+  },
+  {
+    title: "Hecho con Electron",
+    text: "Aplicación de escritorio con interfaz propia, hecha con JavaScript y CSS.",
+  },
+];
+---
+
+<section class="info container">
+  <div class="media">
+    <Image src={shot} alt="Captura del launcher" width={800} format="webp" />
+  </div>
+
+  <div class="items">
+    {items.map((item) => (
+      <article>
+        <h2>{item.title}</h2>
+        <p>{item.text}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .info {
+    --accent: #e11d48;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding-block: 5rem;
+  }
+
+  .media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  article {
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: var(--muted);
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

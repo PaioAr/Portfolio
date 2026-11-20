@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import aboutImg from "../../assets/projects/BlockForSaleWeb/BlockForSaleWeb-aboutus.png";
+import eventsImg from "../../assets/projects/BlockForSaleWeb/blockforsaleweb-events.png";
+import downloadImg from "../../assets/projects/BlockForSaleWeb/blockforsaleweb-download.png";
+
+const sections = [
+  {
+    title: "Sobre la comunidad",
+    text: "Una sección para presentar a Block For Sale: quiénes somos, qué hacemos y qué hace especial a la comunidad.",
+    image: aboutImg,
+    alt: "Sección Sobre nosotros de la web",
+  },
+  {
+    title: "Eventos",
+    text: "Aquí se muestran los eventos que ocurren en la comunidad, con su información para que los jugadores sepan cuándo y cómo participar.",
+    image: eventsImg,
+    alt: "Sección de eventos de la web",
+  },
+  {
+    title: "Descarga del launcher",
+    text: "Desde la web los jugadores pueden descargar el launcher oficial y unirse a los eventos sin complicaciones.",
+    image: downloadImg,
+    alt: "Sección de descarga de la web",
+  },
+];
+---
+
+<section class="info container">
+  {sections.map((s) => (
+    <div class="row">
+      <div class="media">
+        <Image src={s.image} alt={s.alt} width={800} format="webp" />
+      </div>
+      <div class="text">
+        <h2>{s.title}</h2>
+        <p>{s.text}</p>
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+  .info {
+    --accent: #e11d48;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-block: 5rem;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  /* alterna: las filas pares ponen la imagen a la derecha */
+  .row:nth-child(even) .media { order: 2; }
+
+  .media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .text {
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p { color: var(--muted); }
+
+  @media (max-width: 768px) {
+    .row { grid-template-columns: 1fr; }
+    .row:nth-child(even) .media { order: 0; }
+  }
+</style> 

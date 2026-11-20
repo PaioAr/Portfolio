@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import webImg from "../../assets/projects/GenesGym/landing_page.png";
+import { url } from "../../utils/url";
+---
+
+<header class="hero">
+  <div class="container inner">
+    <div class="text">
+      <a class="back" href={url("proyectos")}>← Todos los proyectos</a>
+      <h1>Genes Gym</h1>
+      <p class="lead">
+        Página web para promocionar, contratar servicios, manejar socios mediante un panel de administración y brindar información sobre Genes Gym.
+        Administrar el precio de los servicios, horarios, entrenadores y más.
+      </p>
+
+      <ul class="tags">
+        <li>Astro</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>SQL</li>
+        <li>PHP</li>
+        <li>React</li>
+        <li>TypeScript</li>
+      </ul>
+
+      <div class="links">
+        <a
+          class="btn btn--ghost"
+          href="https://github.com/PaioAr/GenesGym"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver código
+        </a>
+      </div>
+    </div>
+
+    <Image
+      class="shot"
+      src={webImg}
+      alt="Captura de la web de Genes Gym"
+      width={720}
+      format="webp"
+      loading="eager"
+    />
+  </div>
+</header>
+
+<style>
+  .hero {
+    --accent: #e11d48; /* cambia el color si la web usa otro */
+    padding-block: 4rem;
+    background: radial-gradient(circle at 80% 20%, rgba(225, 29, 72, 0.18), transparent 60%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .back { color: var(--muted); }
+  .back:hover { color: var(--accent); }
+
+  h1 {
+    margin-top: 1.5rem;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.1;
+  }
+
+  .lead { margin-block: 1rem; color: var(--muted); }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+  }
+  .tags li {
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+  }
+
+  .links { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+  .btn { padding: 0.6rem 1.2rem; border-radius: var(--radius); font-weight: 600; }
+  .btn--ghost { border: 1px solid var(--border); }
+  .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .shot {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .inner { grid-template-columns: 1fr; }
+  }
+</style>

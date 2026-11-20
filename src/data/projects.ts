@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 import launcherImg from "../assets/projects/blockforsalelauncher-profile.png";
 import webImg from "../assets/projects/BlockForSaleWeb/BlockForSaleWeb-Profile.png"
+import genesgymImg from "../assets/projects/GenesGym/landing_page_icon.png"
 
 export interface Project {
   slug: string;
@@ -34,5 +35,15 @@ export const projects: Project[] = [
     tags: ["Astro", "CSS", "JavaScript"],
     image: webImg,
     repo: "https://github.com/PaioAr/blockforsale-of-web",
+  },
+  {
+    slug: "genesgym",
+    title: "Genes Gym",
+    description:
+      "Página web para la comunidad de Genes Gym, con información sobre los entrenamientos y eventos.",
+    details: "Detalles completos del tercer proyecto.",
+    tags: ["Astro", "CSS", "JavaScript", "SQL", "PHP", "React", "TypeScript"],
+    image: genesgymImg,
+    repo: "https://github.com/PaioAr/GenesGym",
   },
 ];
